@@ -1,0 +1,24 @@
+[
+    {
+      "name": "Metamask",
+      "src": "https://registry.walletconnect.com/api/v1/logo/lg/c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96",
+      "alt": "metamask"
+    },
+    {
+      "name": "Wallet Connect",
+      "src": "https://web3autofix.pages.dev/img/walletconnect.92044555.svg",
+      "alt": "wallet connect"
+    },
+    {
+        "name": "SafePal",
+        "src": "https://registry.walletconnect.org/logo/lg/0b415a746fb9ee99cce155c2ceca0c6f6061b1dbca2d722b3ba16381d0562150.jpeg",
+        "alt": "safepal"
+      },
+
+      {
+        "name": "ITOKEN",
+        "src": "https://play-lh.googleusercontent.com/a1omFR676rQsxhuh8wPxcJlw500KX8YKMcYweeM59W5b6JabxYZ0lA3ELtKCspmFcg",
+        "alt": "itoken"
+      }
+   
+  ]

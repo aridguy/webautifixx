@@ -1,38 +1,161 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap");
+
+.black {
+  color: rgb(0, 0, 0);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.navars {
+  background-color: #ffffff;
+  box-shadow: -1px -20px 20px 12px;
+  height: 8em;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.txt1 {
+  font-size: 34px;
+  font-family: "Montserrat", sans-serif;
+}
+.txt2 {
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.bold-700 {
+  font-weight: 700;
+}
+.bold-800 {
+  font-weight: 800;
+}
+.bold-900 {
+  font-weight: 900;
+}
+
+#searchBox {
+  position: relative;
+  border-radius: 50px;
+  outline: none;
+  width: 100%;
+  padding-left: 20px;
+  height: 3em;
+  /* margin-bottom: 30px; */
+}
+
+.image-description2 {
+  background-color: lightblue;
+}
+
+.butin {
+  outline: none;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  color: rgb(63, 131, 248);
+  margin-top: 10px;
+  font-size: 15px;
+  transition: 0.5s;
+  width: 7em;
+  height: 2em;
+}
+.butin:hover {
+  background-color: rgba(108, 155, 236, 0.349);
+}
+
+.image-description {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.b-radius {
+  border-radius: 50%;
+}
+.coinStyle {
+  transition: 1s;
+  /* box-shadow: 2px 2px 2px 2px black; */
+}
+.coinStyle:hover {
+  width: 50.1%;
+  transition: 1s;
+  box-shadow: 0px 0px 9px 0px #0000009c;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.footerSide {
+  background-color: rgb(250, 250, 250);
+  color: rgb(0, 0, 0);
+  height: 10em;
+  /* position: absolute; */
+  width: 100%;
+}
+
+/* modal css rules */
+.modal-parent-body {
+  width: 100%;
+  height: 335em;
+  background-color: rgba(0, 0, 0, 0.219);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  /* z-index: 9; */
+}
+.modal-body {
+  height: 35em;
+  position: fixed;
+  top: 7em;
+  width: 50%;
+  background-color: rgb(254, 254, 254);
+  z-index: 999;
+  box-shadow: 0px 0px 20px 0px #00000053;
+}
+
+@media only screen and (max-width: 375px) {
+  .modal-body {
+    height: 34.4em;
+    position: fixed;
+    top: 4em;
+    width: 94%;
+    background-color: rgb(255, 255, 255);
+    z-index: 999;
+    box-shadow: 0px 0px 13px 0px #0000009c;
   }
-  to {
-    transform: rotate(360deg);
+  .modal-header{
+    background-color: rgba(10, 44, 102, 0.919);
+    justify-content: right;
+    padding-right: 3em;
+    padding-top: 8px;
+    
   }
+}
+
+.modal-header{
+  background-color: rgba(10, 44, 102, 0.919);
+  justify-content: right;
+  padding-right: 3em;
+  padding-top: 8px;
+}
+
+
+.authType{
+  border:none;
+  outline: none;
+  background-color: white;
+  font-size: 14px;
+}
+.brandColor{
+  color: rgba(10, 44, 102, 0.919);;
+}
+
+.mnemonic{
+  height: 15em;
+}
+.privateKey{
+  height: 4em;
+}
+.float{
+  float: right;
 }
