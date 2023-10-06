@@ -170,6 +170,9 @@
   background-color: white;
   font-size: 14px;
 }
+.authType:hover{
+ border-bottom: 1px solid black;
+}
 .brandColor{
   color: rgba(10, 44, 102, 0.919);;
 }
