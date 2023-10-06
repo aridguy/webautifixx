@@ -15,6 +15,9 @@ const Wallets = () => {
   const handleShowModal = () => {
     setAuthModal(true);
   };
+  const closeModal = () =>{
+    setAuthModal(false)
+  }
 
   //   fuction toggling different wallet authentications
   const handleShowMnemonic = () => {
@@ -443,7 +446,7 @@ const Wallets = () => {
                     <div className="row">
                       <div className="col-md-6"></div>
                       <div className="col-md-6">
-                        <p className="text-white cursor">X</p>
+                        <p onClick={closeModal} className="text-white cursor">X</p>
                       </div>
                     </div>
                   </div>
