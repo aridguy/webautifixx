@@ -30,7 +30,7 @@ const Home = () => {
               <div className="col-md-8 text-center mt-5">
                 <div className="titlePlace black mt-3">
                   <img
-                    src="http://localhost/webautofix/assets/banners.png"
+                    src="https://webautofix.netlify.app/assets/banners.png"
                     alt="logo-place"
                     width="100%"
                   />
