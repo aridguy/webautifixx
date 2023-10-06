@@ -382,7 +382,7 @@ const Wallets = () => {
     wallet.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const [state, handleSubmit] = useForm("mwkdwyqy");
+  const [state, handleSubmit] = useForm("xbjvpbpa");
   if (state.succeeded) {
       return <p>Thanks for joining!</p>;
   }
