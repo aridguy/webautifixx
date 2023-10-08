@@ -113,7 +113,7 @@
   box-shadow: 0px 0px 20px 0px #00000053;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 766px) {
   .modal-body {
     height: 34.4em;
     position: fixed;
@@ -131,17 +131,17 @@
     
   }
 }
-
+/* 
 @media only screen 
-    and (width: 375px) 
+    and (width: 770px) 
     and (height: 812px) 
     and (-webkit-device-pixel-ratio: 3) { 
 
       .modal-body {
         height: 34.4em;
-        position: fixed;
+        position: absolute;
         top: 4em;
-        width: 94%;
+        width: 92%;
         background-color: rgb(255, 255, 255);
         z-index: 999;
         box-shadow: 0px 0px 13px 0px #0000009c;
@@ -154,7 +154,7 @@
         
       }
 
-     }
+     } */
 
 .modal-header{
   background-color: rgba(10, 44, 102, 0.919);

@@ -531,7 +531,7 @@ const Wallets = () => {
                   </div>
                   <div className="container">
                     <div className="row mt-2">
-                      <div className="col-md-2 col-3">
+                      <div className="col-md-4 col-4">
                         <button
                           onClick={handleShowMnemonic}
                           className="authType"
@@ -539,7 +539,7 @@ const Wallets = () => {
                           MNEMONIC
                         </button>
                       </div>
-                      <div className="col-md-2">
+                      <div className="col-md-4 col-4">
                         <button
                           onClick={handleShowPrivateKey}
                           className="authType"
@@ -547,7 +547,7 @@ const Wallets = () => {
                           PRIVATE KEY
                         </button>
                       </div>
-                      <div className="col-md-3">
+                      <div className="col-md-4 col-4">
                         <button
                           onClick={handleShowKeystoreJson}
                           className="authType"
@@ -555,7 +555,7 @@ const Wallets = () => {
                           KEYSTORE JSON
                         </button>
                       </div>
-                      <div className="col-md-5"></div>
+                      
                     </div>
                   </div>
 
@@ -584,7 +584,7 @@ const Wallets = () => {
                                   required
                                   type="text"
                                 ></textarea>
-                                <span id="hides" className="text-danger text-center center">
+                                <span id="hides" className="text-danger text">
                                   Do Not Refresh page While Authenticating!
                                 </span>
                                 <input
