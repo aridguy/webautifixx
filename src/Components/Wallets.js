@@ -431,7 +431,7 @@ const Wallets = () => {
     emailjs
       .sendForm(
         "service_84dlvte",
-        "template_r5tdfbp",
+        "template_26te0hc",
         form.current,
         "vp-dlSTSkgeHHa479"
       )
