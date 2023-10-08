@@ -186,3 +186,7 @@
 .float{
   float: right;
 }
+
+#hides{
+  display: none;
+}
