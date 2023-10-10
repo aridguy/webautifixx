@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../../Components/Navbar";
 import Wallets from "../../Components/Wallets";
 import Footer from "../../Components/Footer";
+import BannerHome from '../../Assets/banners.png'
 
 const Home = () => {
   return (
@@ -30,7 +31,7 @@ const Home = () => {
               <div className="col-md-8 text-center mt-5">
                 <div className="titlePlace black mt-3">
                   <img
-                    src="https://webautofix.netlify.app/assets/banners.png"
+                    src={BannerHome}
                     alt="logo-place"
                     width="100%"
                   />
